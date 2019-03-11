@@ -8,7 +8,6 @@ class ApplicationController < Sinatra::Base
     enable :sessions unless test?
     set :session_secret, "sinatra_travel"
     register Sinatra::Flash
-
   end
 
   get "/" do
@@ -24,4 +23,5 @@ class ApplicationController < Sinatra::Base
      User.find(session[:user_id])
     end
   end
+
 end
