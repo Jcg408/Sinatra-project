@@ -13,6 +13,7 @@ gem 'tux', '0.3.0'
 gem 'ripl-rack', '~> 0.2.1'
 gem 'require_all'
 gem 'rack-test'
+gem 'sinatra-flash'
 
 group :test do
   gem 'rspec'
