@@ -24,7 +24,6 @@ class TravelsController < ApplicationController
       redirect '/travels/new'
     else
       @travel = current_user.travels.create(itinerary: params[:itinerary], date_leave: params[:date_leave], date_return: params[:date_return], travel_purpose: params[:travel_purpose], notes: params[:notes])
-
       redirect to "/travels/#{@travel.id}"
     end
   end
@@ -68,8 +67,4 @@ class TravelsController < ApplicationController
       redirect "/travels/#{@travel.id}"
     end
   end
-
-
-
-
 end
