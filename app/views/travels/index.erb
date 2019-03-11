@@ -1,0 +1,26 @@
+
+<div class="wrapper">
+
+  <h1>Travel List for <%= current_user.first_name %> <%= current_user.last_name %></h1>
+
+  <h4 style="font-style: italic">Select Itinerary to View/Edit</h4><br>
+  <ul>
+    <% @travels.each do |travel|
+      if travel.user_id == current_user.id %>
+      <li>
+        <p><a href="/travels/<%= travel.id %>/edit"><%= travel.itinerary %> <%= travel.date_leave %> - <%= travel.date_return %></a></p>
+      </li>
+    <%end %>
+    <% end %>
+  </ul>
+  <br>
+  <h4 style="font-style: italic">or</h4><br>
+  <h4><a href="/travels/new" >Create Itinerary</a></h4>
+  <h4><a href="/logout"> Log Out</a></h4>
+</div>
+
+
+
+
+
+

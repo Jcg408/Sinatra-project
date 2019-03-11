@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h1>Travel Record Created </h1><br>
+
+  <label for="itinerary">Travel Itinerary </label><p> <%= @travel.itinerary %> </p><br>
+  <label for="dates">Travel Dates</label> <p> <%= @travel.date_leave %> - <%= @travel.date_return %></p><br>
+  <label for="purpose">Travel Purpose</label><p><%= @travel.travel_purpose %> </p><br>
+  <label for="notes">Notes</label><p><%= @travel.notes %></p><br>
+
+
+  <h3><a href="/travels/<%= @travel.id %>/edit" > Edit Itinerary Record</h3></a><br>
+
+  <h3><a href="/travels" >Return to Travel List</a ></h3><br>
+  <hr>
+  <h3>Delete Itinerary Record</h3>
+  <p style="font-style: italic">Note! This Action Can't be Undone!</p>
+  <form method="POST" action="/travels/<%= @travel.id %>/delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE ">
+  </form>
+  <br>
+
+
+
+</div>
+
+
+

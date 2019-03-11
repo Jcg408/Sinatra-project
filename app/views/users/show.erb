@@ -1,0 +1,16 @@
+
+<h1>Travel for <%= @user.first_name %> <%= @user.last_name %> </h1>
+<h2>Click line for more information</h2>
+
+
+<ul>
+  <%@user.travels.each do |travel| %>
+  <li>
+    <p><a href="/travels/<%= travel.id %>"><%= travel.itinerary %> <%= travel.date_leave %> - <%= travel.date_return %></a></p>
+  </li>
+  <% end %>
+</ul>
+
+
+<a href="/travels/new">Create Itinerary</a><br><br>
+<a href="/logout"> Log Out</a>

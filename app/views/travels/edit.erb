@@ -1,0 +1,24 @@
+<div class="wrapper">
+
+  <h1>Edit Travel Record</h1>
+  <h3><%= @travel.itinerary%>
+
+  <form method="post" action="/travels/<%= @travel.id %>">
+
+    <input type="hidden" name="_method" value="patch">
+    <label for="itinerary">Itinerary</label><input type="text" name="itinerary" value="<%= @travel.itinerary %>"><br>
+    <label for="outbound">Outbound Date</label><input type="text" name="date_leave" value=" <%= @travel.date_leave %>"><br>
+    <label for="return">Return Date</label><input type="text" name="date_return" value=" <%= @travel.date_return %>"><br>
+    <label for="purpose">Travel Purpose</label><input type="text" name="travel_purpose" value=" <%= @travel.travel_purpose %>"><br>
+    <label for="notes">Notes</label><input type="text" name="notes" value=" <%= @travel.notes %>"><br>
+
+
+    <input type="submit" value="Edit Record">
+  </form>
+</div>
+<h3>Delete Itinerary Record</h3>
+<p style="font-style: italic">Note! This Action Can't be Undone!</p>
+<form method="POST" action="/travels/<%= @travel.id %>/delete">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE ">
+</form>
