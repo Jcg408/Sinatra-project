@@ -6,20 +6,20 @@
   <label for="purpose">Travel Purpose</label><p><%= @travel.travel_purpose %> </p><br>
   <label for="notes">Notes</label><p><%= @travel.notes %></p><br>
 
+    <%if @travel.user_id == current_user.id %>
+
   <h3><a href="/travels/<%= @travel.id %>/edit" > Edit Itinerary Record</h3></a><br>
 
-  <h3><a href="/travels" >Return to Travel List</a ></h3><br>
+    <h3>Delete Itinerary Record</h3>
+    <p style="font-style: italic">Note! This Action Can't be Undone!</p>
+    <form method="POST" action="/travels/<%= @travel.id %>/delete">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="DELETE ">
+    </form>
   <hr>
-  <h3>Delete Itinerary Record</h3>
-  <p style="font-style: italic">Note! This Action Can't be Undone!</p>
-  <form method="POST" action="/travels/<%= @travel.id %>/delete">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="DELETE ">
-  </form>
+  <%end %>
   <br>
-
-
-
+    <h3><a href="/travels" >Return to Travel List</a ></h3><br>
 </div>
 
 
